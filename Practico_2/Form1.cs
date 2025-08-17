@@ -86,6 +86,16 @@ namespace Practico_2
             }
         }
 
+        private void TTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Este campo solo admite números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -109,6 +119,21 @@ namespace Practico_2
         private void TDni_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void RBVaron_CheckedChanged(object sender, EventArgs e)
+        {
+           // pictureBox1.BackgroundImage = Formulario_MDI.My.Resources.Foto1;
+        }
+
+        private void RBMujer_CheckedChanged(object sender, EventArgs e)
+        {
+         //   pictureBox1.BackgroundImage = Formulario_MDI.My.Resources.Foto2;
         }
 
     }
