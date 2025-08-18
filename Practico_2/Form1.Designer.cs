@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BGuardar = new System.Windows.Forms.Button();
             this.tEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,31 +45,25 @@
             this.TTelefono = new System.Windows.Forms.TextBox();
             this.LTelefono = new System.Windows.Forms.Label();
             this.LNuevocliente = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RBVaron = new System.Windows.Forms.RadioButton();
             this.RBMujer = new System.Windows.Forms.RadioButton();
             this.BSalir = new System.Windows.Forms.Button();
+            this.BGuardar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // BGuardar
-            // 
-            this.BGuardar.Location = new System.Drawing.Point(62, 413);
-            this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(62, 26);
-            this.BGuardar.TabIndex = 0;
-            this.BGuardar.Text = "Guardar";
-            this.BGuardar.UseVisualStyleBackColor = true;
-            this.BGuardar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tEliminar
             // 
-            this.tEliminar.Location = new System.Drawing.Point(173, 413);
+            this.tEliminar.Image = global::Practico_2.Properties.Resources.delete_delete_deleteusers_delete_male_user_maleclient_2348_1_;
+            this.tEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tEliminar.Location = new System.Drawing.Point(168, 397);
             this.tEliminar.Name = "tEliminar";
-            this.tEliminar.Size = new System.Drawing.Size(62, 26);
+            this.tEliminar.Size = new System.Drawing.Size(104, 56);
             this.tEliminar.TabIndex = 1;
             this.tEliminar.Text = "Eliminar";
+            this.tEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tEliminar.UseVisualStyleBackColor = true;
             this.tEliminar.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -242,14 +235,6 @@
             this.LNuevocliente.TabIndex = 12;
             this.LNuevocliente.Text = "Nuevo Cliente";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(332, 82);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // RBVaron
             // 
             this.RBVaron.AutoSize = true;
@@ -276,13 +261,38 @@
             // 
             // BSalir
             // 
-            this.BSalir.Location = new System.Drawing.Point(397, 413);
+            this.BSalir.Image = global::Practico_2.Properties.Resources.Visualpharm_Must_Have_Log_Out_48;
+            this.BSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BSalir.Location = new System.Drawing.Point(355, 397);
             this.BSalir.Name = "BSalir";
-            this.BSalir.Size = new System.Drawing.Size(62, 26);
+            this.BSalir.Size = new System.Drawing.Size(104, 56);
             this.BSalir.TabIndex = 16;
             this.BSalir.Text = "Salir";
+            this.BSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BSalir.UseVisualStyleBackColor = true;
             this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            // 
+            // BGuardar
+            // 
+            this.BGuardar.Image = global::Practico_2.Properties.Resources.Designcontest_Ecommerce_Business_Save_48;
+            this.BGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BGuardar.Location = new System.Drawing.Point(41, 397);
+            this.BGuardar.Name = "BGuardar";
+            this.BGuardar.Size = new System.Drawing.Size(104, 56);
+            this.BGuardar.TabIndex = 0;
+            this.BGuardar.Text = "Guardar";
+            this.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BGuardar.UseVisualStyleBackColor = true;
+            this.BGuardar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(332, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 97);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 

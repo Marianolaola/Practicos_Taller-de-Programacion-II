@@ -123,18 +123,22 @@ namespace Practico_2
 
         private void BSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void RBVaron_CheckedChanged(object sender, EventArgs e)
         {
-           // pictureBox1.BackgroundImage = Formulario_MDI.My.Resources.Foto1;
+            pictureBox1.BackgroundImage = Properties.Resources.IconoVaron_96;
         }
 
         private void RBMujer_CheckedChanged(object sender, EventArgs e)
         {
-         //   pictureBox1.BackgroundImage = Formulario_MDI.My.Resources.Foto2;
+            pictureBox1.BackgroundImage = Properties.Resources.IconoMujer_96;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
