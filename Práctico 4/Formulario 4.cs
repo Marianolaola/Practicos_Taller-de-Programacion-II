@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Práctico_4
 {
@@ -17,26 +18,18 @@ namespace Práctico_4
             InitializeComponent();
         }
 
-        private void txtDesdeKeyPress(object sender, KeyPressEventArgs e)
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 MessageBox.Show("Solo se permiten números enteros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                e.Handled = true;
             }
         }
 
-        private void txtHastaKeyPress(object sender, KeyPressEventArgs e)
+        private void GenerarNúmeros(string tipo)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                MessageBox.Show("Solo se permiten números enteros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void btnGenerarFuncion_Click(object sender, EventArgs e)
-        {
+            lista_Numeros.Items.Clear();
             if(string.IsNullOrEmpty(txtDesde.Text) || string.IsNullOrEmpty(txtHasta.Text)){
 
                 MessageBox.Show("Por favor, complete ambos campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,8 +47,76 @@ namespace Práctico_4
 
             for (int i = desde; i <= hasta; i++)
             {
-                lista_Numeros.Items.Add(i);
+                switch (tipo)
+                {
+                    case "Todos":
+                        lista_Numeros.Items.Add(i);
+                        break;
+                    case "Pares":
+                        if (i % 2 == 0)
+                        {
+                            lista_Numeros.Items.Add(i);
+                        }
+                        break;
+                    case "Impares":
+                        if (i% 2 != 0)
+                        {
+                            lista_Numeros.Items.Add(i);
+                        }
+                        break;
+                    case "Primos":
+                        if (esPrimo(i))
+                        {
+                            lista_Numeros.Items.Add(i);
+                        }
+                        break;
+                }
+                
             }
+        }
+
+        private bool esPrimo(int n)
+        {
+            if (n < 2) return false;
+            for (int j = 2; j <= Math.Sqrt(n); j++)
+            {
+                if (n % j == 0) return false;
+            }
+            return true;
+        }
+
+        private void btnPares_Click(object sender, EventArgs e)
+        {
+            GenerarNúmeros("Pares");
+        }
+
+        private void btnImpares_Click(object sender, EventArgs e)
+        {
+            GenerarNúmeros("Impares");
+        }
+
+        private void btnPrimos_Click(object sender, EventArgs e)
+        {
+            GenerarNúmeros("Primos");
+        }
+
+        private void btnGenerarFuncion_Click(object sender, EventArgs e)
+        {
+            GenerarNúmeros("Todos");
+        }
+
+        private void chartNumeros_Click(object sender, EventArgs e)
+        {
+            chartNumeros.Series.Clear();
+
+            Series serie = new Series("Números");
+            serie.ChartType = SeriesChartType.Column;
+            foreach (var item in lista_Numeros.Items)
+            {
+                int valor = int.Parse(item.ToString());
+                serie.Points.AddY(valor);
+            }
+            chartNumeros.Series.Add(serie);
         }
     }
 }
