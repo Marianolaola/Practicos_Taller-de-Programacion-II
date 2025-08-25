@@ -83,6 +83,16 @@ namespace Practico_5.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floppy {
+            get {
+                object obj = ResourceManager.GetObject("floppy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap floppy_disk {
             get {
                 object obj = ResourceManager.GetObject("floppy_disk", resourceCulture);
