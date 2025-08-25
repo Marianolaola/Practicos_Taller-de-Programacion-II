@@ -21,8 +21,28 @@ namespace Practico_5
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
 
+            dataGridView1.Columns.Add("CApellido", "Apellido");
+            dataGridView1.Columns.Add("CNombre", "Nombre");
+            dataGridView1.Columns.Add("CFechaNacimiento", "Fecha Nacimiento");
+            dataGridView1.Columns.Add("CSexo", "Sexo");
+            dataGridView1.Columns.Add("CSaldo", "Saldo");
+            dataGridView1.Columns.Add("CFoto", "Foto");
+            dataGridView1.Columns.Add("CRuta", "Ruta");
+
+            DataGridViewButtonColumn colBtn = new DataGridViewButtonColumn();
+            colBtn.Name = "BEliminar";
+            colBtn.HeaderText = "Acción";
+            colBtn.Text = "Borrar";
+            colBtn.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(colBtn);
+
+            dataGridView1.Columns["CApellido"].DefaultCellStyle.Font = new Font("papyrus", 8, FontStyle.Regular);
+            dataGridView1.Columns["CNombre"].DefaultCellStyle.Font = new Font("papyrus", 8, FontStyle.Regular);
         }
+
+      
 
         private void InitCustomLabelFont()
         {
@@ -107,10 +127,33 @@ namespace Practico_5
 
             dataGridView1.Rows[n].Cells[0].Value = TBApellido.Text;
             dataGridView1.Rows[n].Cells[1].Value = TBNombre.Text;
-            dataGridView1.Rows[n].Cells[2].Value = dateTimePicker1.Text;
-            dataGridView1.Rows[n].Cells[6].Value = pictureBox1.ImageLocation;
-            dataGridView1.Rows[n].Cells[7].Value = TxtFoto.Text;
+            if (RBHombre.Checked)
+            {
+                dataGridView1.Rows[n].Cells[2].Value = RBHombre.Text;
+            }
+            else
+            {
+                if(RBMujer.Checked)
+                {
+                    dataGridView1.Rows[n].Cells[2].Value = RBMujer.Text;
+                }
+            }
+            dataGridView1.Rows[n].Cells[3].Value = dateTimePicker1.Text;
 
+
+            dataGridView1.Rows[n].Cells[4].Value = TBSueldo.Text;
+
+            dataGridView1.Rows[n].Cells[5].Value = pictureBox1.ImageLocation;
+            dataGridView1.Rows[n].Cells[6].Value = TxtFoto.Text;
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["BEliminar"].Index)
+            {
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+            }
         }
     }
 }

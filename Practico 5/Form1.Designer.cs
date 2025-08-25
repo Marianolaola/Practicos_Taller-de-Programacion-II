@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LFechaNacimiento = new System.Windows.Forms.Label();
@@ -48,15 +41,12 @@
             this.BFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LSexo = new System.Windows.Forms.Label();
+            this.RBHombre = new System.Windows.Forms.RadioButton();
+            this.RBMujer = new System.Windows.Forms.RadioButton();
+            this.LSueldo = new System.Windows.Forms.Label();
+            this.TBSueldo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CFoto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CRuta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,7 +58,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Practico_5.Properties.Resources.floppy;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(182, 225);
+            this.button1.Location = new System.Drawing.Point(179, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 39);
             this.button1.TabIndex = 1;
@@ -81,6 +71,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BackgroundImage = global::Practico_5.Properties.Resources.images;
+            this.panel1.Controls.Add(this.TBSueldo);
+            this.panel1.Controls.Add(this.LSueldo);
+            this.panel1.Controls.Add(this.RBMujer);
+            this.panel1.Controls.Add(this.RBHombre);
+            this.panel1.Controls.Add(this.LSexo);
             this.panel1.Controls.Add(this.LFechaNacimiento);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.TBApellido);
@@ -93,7 +88,7 @@
             this.panel1.Font = new System.Drawing.Font("Papyrus", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(42, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 267);
+            this.panel1.Size = new System.Drawing.Size(433, 306);
             this.panel1.TabIndex = 0;
             // 
             // LFechaNacimiento
@@ -119,7 +114,7 @@
             // TBApellido
             // 
             this.TBApellido.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellido.Location = new System.Drawing.Point(125, 84);
+            this.TBApellido.Location = new System.Drawing.Point(125, 80);
             this.TBApellido.Multiline = true;
             this.TBApellido.Name = "TBApellido";
             this.TBApellido.Size = new System.Drawing.Size(207, 20);
@@ -143,7 +138,7 @@
             this.LApellido.AutoSize = true;
             this.LApellido.BackColor = System.Drawing.Color.Transparent;
             this.LApellido.ForeColor = System.Drawing.Color.White;
-            this.LApellido.Location = new System.Drawing.Point(23, 76);
+            this.LApellido.Location = new System.Drawing.Point(23, 72);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(102, 33);
             this.LApellido.TabIndex = 5;
@@ -163,7 +158,7 @@
             // TxtFoto
             // 
             this.TxtFoto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFoto.Location = new System.Drawing.Point(125, 178);
+            this.TxtFoto.Location = new System.Drawing.Point(125, 228);
             this.TxtFoto.Multiline = true;
             this.TxtFoto.Name = "TxtFoto";
             this.TxtFoto.Size = new System.Drawing.Size(207, 20);
@@ -173,7 +168,7 @@
             // 
             this.BFoto.Font = new System.Drawing.Font("Arial", 8.25F);
             this.BFoto.ForeColor = System.Drawing.Color.Black;
-            this.BFoto.Location = new System.Drawing.Point(29, 177);
+            this.BFoto.Location = new System.Drawing.Point(29, 227);
             this.BFoto.Name = "BFoto";
             this.BFoto.Size = new System.Drawing.Size(75, 23);
             this.BFoto.TabIndex = 2;
@@ -194,87 +189,88 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // LSexo
+            // 
+            this.LSexo.AutoSize = true;
+            this.LSexo.BackColor = System.Drawing.Color.Transparent;
+            this.LSexo.ForeColor = System.Drawing.Color.White;
+            this.LSexo.Location = new System.Drawing.Point(23, 151);
+            this.LSexo.Name = "LSexo";
+            this.LSexo.Size = new System.Drawing.Size(70, 33);
+            this.LSexo.TabIndex = 9;
+            this.LSexo.Text = "Sexo:";
+            // 
+            // RBHombre
+            // 
+            this.RBHombre.AutoSize = true;
+            this.RBHombre.BackColor = System.Drawing.Color.Transparent;
+            this.RBHombre.Checked = true;
+            this.RBHombre.Font = new System.Drawing.Font("Papyrus", 10.75F);
+            this.RBHombre.ForeColor = System.Drawing.Color.Transparent;
+            this.RBHombre.Location = new System.Drawing.Point(113, 155);
+            this.RBHombre.Name = "RBHombre";
+            this.RBHombre.Size = new System.Drawing.Size(81, 28);
+            this.RBHombre.TabIndex = 10;
+            this.RBHombre.TabStop = true;
+            this.RBHombre.Text = "Hombre";
+            this.RBHombre.UseVisualStyleBackColor = false;
+            // 
+            // RBMujer
+            // 
+            this.RBMujer.AutoSize = true;
+            this.RBMujer.BackColor = System.Drawing.Color.Transparent;
+            this.RBMujer.Font = new System.Drawing.Font("Papyrus", 10.75F);
+            this.RBMujer.ForeColor = System.Drawing.Color.Transparent;
+            this.RBMujer.Location = new System.Drawing.Point(213, 155);
+            this.RBMujer.Name = "RBMujer";
+            this.RBMujer.Size = new System.Drawing.Size(66, 28);
+            this.RBMujer.TabIndex = 11;
+            this.RBMujer.Text = "Mujer";
+            this.RBMujer.UseVisualStyleBackColor = false;
+            // 
+            // LSueldo
+            // 
+            this.LSueldo.AutoSize = true;
+            this.LSueldo.BackColor = System.Drawing.Color.Transparent;
+            this.LSueldo.ForeColor = System.Drawing.Color.White;
+            this.LSueldo.Location = new System.Drawing.Point(23, 187);
+            this.LSueldo.Name = "LSueldo";
+            this.LSueldo.Size = new System.Drawing.Size(89, 33);
+            this.LSueldo.TabIndex = 12;
+            this.LSueldo.Text = "Sueldo:";
+            // 
+            // TBSueldo
+            // 
+            this.TBSueldo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBSueldo.Location = new System.Drawing.Point(125, 195);
+            this.TBSueldo.Multiline = true;
+            this.TBSueldo.Name = "TBSueldo";
+            this.TBSueldo.Size = new System.Drawing.Size(207, 20);
+            this.TBSueldo.TabIndex = 13;
+            // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CNombre,
-            this.CApellido,
-            this.CSexo,
-            this.CFechaNacimiento,
-            this.CEliminar,
-            this.CSaldo,
-            this.CFoto,
-            this.CRuta});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 295);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 337);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(830, 124);
+            this.dataGridView1.Size = new System.Drawing.Size(846, 124);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // CNombre
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Papyrus", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.CNombre.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CNombre.HeaderText = "Nombre";
-            this.CNombre.Name = "CNombre";
-            // 
-            // CApellido
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Papyrus", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.CApellido.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CApellido.HeaderText = "Apellido";
-            this.CApellido.Name = "CApellido";
-            // 
-            // CSexo
-            // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.CSexo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CSexo.HeaderText = "Sexo";
-            this.CSexo.Name = "CSexo";
-            // 
-            // CFechaNacimiento
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.CFechaNacimiento.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CFechaNacimiento.HeaderText = "Fecha Nacimiento";
-            this.CFechaNacimiento.Name = "CFechaNacimiento";
-            // 
-            // CEliminar
-            // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.CEliminar.DefaultCellStyle = dataGridViewCellStyle5;
-            this.CEliminar.HeaderText = "Eliminar";
-            this.CEliminar.Name = "CEliminar";
-            // 
-            // CSaldo
-            // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.CSaldo.DefaultCellStyle = dataGridViewCellStyle6;
-            this.CSaldo.HeaderText = "Saldo";
-            this.CSaldo.Name = "CSaldo";
-            // 
-            // CFoto
-            // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.CFoto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.CFoto.HeaderText = "Foto";
-            this.CFoto.Name = "CFoto";
-            // 
-            // CRuta
-            // 
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.CRuta.DefaultCellStyle = dataGridViewCellStyle8;
-            this.CRuta.HeaderText = "Ruta";
-            this.CRuta.Name = "CRuta";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Practico_5.Properties.Resources.cuadros_negros;
-            this.ClientSize = new System.Drawing.Size(854, 431);
+            this.ClientSize = new System.Drawing.Size(854, 473);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -305,16 +301,13 @@
         private System.Windows.Forms.TextBox TBNombre;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LNombre;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label LFechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CFechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CSaldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CFoto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CRuta;
+        private System.Windows.Forms.RadioButton RBMujer;
+        private System.Windows.Forms.RadioButton RBHombre;
+        private System.Windows.Forms.Label LSexo;
+        private System.Windows.Forms.Label LSueldo;
+        private System.Windows.Forms.TextBox TBSueldo;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
