@@ -28,7 +28,14 @@ namespace Practico_5
             dataGridView1.Columns.Add("CFechaNacimiento", "Fecha Nacimiento");
             dataGridView1.Columns.Add("CSexo", "Sexo");
             dataGridView1.Columns.Add("CSaldo", "Saldo");
-            dataGridView1.Columns.Add("CFoto", "Foto");
+
+            DataGridViewImageColumn colImg = new DataGridViewImageColumn();
+            colImg.Name = "CFoto";
+            colImg.HeaderText = "Foto";
+            colImg.ImageLayout = DataGridViewImageCellLayout.Zoom; 
+            dataGridView1.Columns.Add(colImg);
+
+            
             dataGridView1.Columns.Add("CRuta", "Ruta");
 
             DataGridViewButtonColumn colBtn = new DataGridViewButtonColumn();
@@ -143,8 +150,21 @@ namespace Practico_5
 
             dataGridView1.Rows[n].Cells[4].Value = TBSueldo.Text;
 
-            dataGridView1.Rows[n].Cells[5].Value = pictureBox1.ImageLocation;
+            if (pictureBox1.Image != null)
+            {
+                dataGridView1.Rows[n].Cells["CFoto"].Value = pictureBox1.Image;
+            }
+            
             dataGridView1.Rows[n].Cells[6].Value = TxtFoto.Text;
+
+            if (decimal.TryParse(TBSueldo.Text, out decimal sueldo))
+            {
+                if (sueldo < 50)
+                {
+                    dataGridView1.Rows[n].DefaultCellStyle.BackColor = Color.Red;
+                    dataGridView1.Rows[n].DefaultCellStyle.ForeColor = Color.White; 
+                }
+            }
 
         }
 
